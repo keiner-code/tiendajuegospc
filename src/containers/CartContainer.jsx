@@ -6,15 +6,15 @@ import CartItem from '../components/CartItem';
 const CartContainer = () =>{
     let totalPrice=0;
     let cont=0;
-    const {addCart} = React.useContext(AppContext);
-    console.log(addCart);
+    const {addtoCart} = React.useContext(AppContext);
+    console.log(addtoCart);
     return(
         <div className="cart">
             <div className="cart-container-item">
-                {addCart.map(item => item.hasOwnProperty(0) && <CartItem key={item.id} product={item}/>)}
+                {addtoCart.Cart.map(item => <CartItem key={item.id} product={item}/>)}
             </div>
-            {/* {addtoCart.Cart.map(price =>{ totalPrice += price.price*price.amount; cont++})}
-            {cont === addtoCart.Cart.length && <CartPrice price={{price:  totalPrice }}/>} */}
+            {addtoCart.Cart.map(price =>{ totalPrice += price.price*price.amount; cont++})}
+            {cont === addtoCart.Cart.length && <CartPrice price={{price:  totalPrice }}/>}
                 
         </div>
     )
